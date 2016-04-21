@@ -75,7 +75,7 @@
     // 默认有箭头
     self.arrow = YES;
     
-    self.backgroundColor = CircleBackgroundColor;
+    self.backgroundColor = [UIColor clearColor];
     
     for (NSUInteger i = 0; i < 9; i++) {
         

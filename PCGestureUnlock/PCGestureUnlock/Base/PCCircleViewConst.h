@@ -7,14 +7,24 @@
 #define kScreenH [UIScreen mainScreen].bounds.size.height
 
 /**
- *  单个圆背景色
- */
-#define CircleBackgroundColor [UIColor clearColor]
-
-/**
  *  解锁背景色
  */
 #define CircleViewBackgroundColor rgba(13,52,89,1)
+
+/**
+ *  普通状态下单个圆背景色
+ */
+#define CircleNormalBackgroundColor [UIColor clearColor]
+
+/**
+ *  选中状态下单个圆背景色
+ */
+#define CircleSelectedBackgroundColor  [[UIColor whiteColor] colorWithAlphaComponent:0.3];
+
+/**
+ *  错误状态下单个圆背景色
+ */
+#define CircleErrorBackgroundColor  [[UIColor redColor] colorWithAlphaComponent:0.3];
 
 /**
  *  普通状态下外空心圆颜色

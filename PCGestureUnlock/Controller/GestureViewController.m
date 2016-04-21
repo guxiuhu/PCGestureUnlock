@@ -224,7 +224,7 @@
     
     if (equal) {
         
-        NSLog(@"两次手势匹配！可以进行本地化保存了");
+        NSLog(@"两次手势匹配！");
         
         [self.msgLabel showWarnMsg:gestureTextSetSuccess];
         [self.navigationController popToRootViewControllerAnimated:YES];

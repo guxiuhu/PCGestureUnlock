@@ -31,7 +31,7 @@
  */
 -(void)lockViewPrepare{
     
-    self.backgroundColor = CircleBackgroundColor;
+    self.backgroundColor = [UIColor clearColor];
     
     for (NSUInteger i = 0; i < 9; i++) {
         

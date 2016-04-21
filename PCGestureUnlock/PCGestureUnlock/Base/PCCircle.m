@@ -30,14 +30,14 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        self.backgroundColor = CircleBackgroundColor;
+        self.backgroundColor = CircleNormalBackgroundColor;
     }
     return self;
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
-        self.backgroundColor = CircleBackgroundColor;
+        self.backgroundColor = CircleNormalBackgroundColor;
     }
     return self;
 }
@@ -58,8 +58,14 @@
         radio = 1;
     }
     
+    [[self bgColor] set];
+    CGContextFillPath(ctx);
+    
     // 上下文旋转
     [self transFormCtx:ctx rect:rect];
+    
+    //背景实心圆
+    [self drawCircleBackgroundWithContext:ctx rect:rect color:[self bgColor]];
     
     // 画圆环
     [self drawEmptyCircleWithContext:ctx rect:circleRect color:self.outCircleColor];
@@ -72,6 +78,22 @@
         // 画三角形箭头
         [self drawTrangleWithContext:ctx topPoint:CGPointMake(rect.size.width / 2.0, 10) length:kTrangleLength color:self.trangleColor];
     }
+}
+
+/**
+ *  画背景圆
+ *
+ *  @param ctx   图形上下文
+ *  @param rect  绘制范围
+ *  @param color 绘制颜色
+ */
+- (void)drawCircleBackgroundWithContext:(CGContextRef)ctx rect:(CGRect)rect color:(UIColor *)color {
+    CGMutablePathRef circlePath = CGPathCreateMutable();
+    CGPathAddEllipseInRect(circlePath, NULL, rect);
+    [color set];
+    CGContextAddPath(ctx, circlePath);
+    CGContextFillPath(ctx);
+    CGPathRelease(circlePath);
 }
 
 /**
@@ -204,6 +226,28 @@
             break;
         default:
             color = CircleStateNormalTrangleColor;
+            break;
+    }
+    return color;
+}
+
+/**
+ *  三角形颜色的getter
+ */
+- (UIColor *)bgColor {
+    UIColor *color;
+    switch (_state) {
+        case CircleStateNormal:
+            color = CircleNormalBackgroundColor;
+            break;
+        case CircleStateSelected:
+            color = CircleSelectedBackgroundColor;
+            break;
+        case CircleStateError:
+            color = CircleErrorBackgroundColor;
+            break;
+        default:
+            color = CircleNormalBackgroundColor;
             break;
     }
     return color;
