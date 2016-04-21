@@ -114,7 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				3ABFF5D31B288F54008190C6 /* Controller */,
-				3ABFF5DA1B288F54008190C6 /* FrameWork */,
+				3ABFF5DA1B288F54008190C6 /* Framework */,
 				3ABFF5E11B288F54008190C6 /* Gategory */,
 				3ABFF5E41B288F54008190C6 /* View */,
 				3ABFF5B11B288D75008190C6 /* AppDelegate.h */,
@@ -170,7 +170,7 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		3ABFF5DA1B288F54008190C6 /* FrameWork */ = {
+		3ABFF5DA1B288F54008190C6 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
 				3ABFF5DB1B288F54008190C6 /* PCCircle.h */,
@@ -180,6 +180,7 @@
 				3ABFF5DF1B288F54008190C6 /* PCCircleViewConst.h */,
 				3ABFF5E01B288F54008190C6 /* PCCircleViewConst.m */,
 			);
+			name = Framework;
 			path = FrameWork;
 			sourceTree = "<group>";
 		};

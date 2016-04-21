@@ -1,25 +1,27 @@
+//
+//  PCCircle.h
+//
+//  modified by alpha yu on 16/4/21.
+//
 
 #import <UIKit/UIKit.h>
 
 /**
  *  单个圆的各种状态
  */
-typedef enum{
+typedef NS_ENUM(NSInteger, CircleState) {
     CircleStateNormal = 1,
     CircleStateSelected,
-    CircleStateError,
-    CircleStateLastOneSelected,
-    CircleStateLastOneError
-}CircleState;
+    CircleStateError
+};
 
 /**
  *  单个圆的用途类型
  */
-typedef enum
-{
-    CircleTypeInfo = 1,
+typedef NS_ENUM(NSInteger, CircleType) {
+    CircleTypeInfo = 1,     //小九宫格 PCCircleInfoView 用，实心
     CircleTypeGesture
-}CircleType;
+};
 
 @interface PCCircle : UIView
 
@@ -39,6 +41,6 @@ typedef enum
 @property (nonatomic, assign) BOOL arrow;
 
 /** 角度 */
-@property (nonatomic,assign) CGFloat angle;
+@property (nonatomic, assign) CGFloat angle;
 
 @end

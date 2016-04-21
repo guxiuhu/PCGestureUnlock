@@ -114,7 +114,7 @@
 /**
  *  整个解锁View的Center.y值 在当前屏幕的3/5位置
  */
-#define CircleViewCenterY kScreenH * 3/5
+#define CircleViewCenterY kScreenH * 3.0 / 5.0
 
 /**
  *  连接的圆最少的个数
@@ -199,5 +199,7 @@
  *  @return 字符串对象
  */
 + (NSString *)getGestureWithKey:(NSString *)key;
+
++ (BOOL)hasGesture;
 
 @end

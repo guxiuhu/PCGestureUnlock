@@ -36,12 +36,14 @@
 {
     [super viewWillAppear:animated];
     
-    if (self.type == GestureViewControllerTypeLogin) {
-        [self.navigationController setNavigationBarHidden:YES animated:animated];
-    }
+//    if (self.type == GestureViewControllerTypeVerify) {
+//        [self.navigationController setNavigationBarHidden:YES animated:animated];
+//    }
     
-    // 进来先清空存的第一个密码
-    [PCCircleViewConst saveGesture:nil Key:gestureOneSaveKey];
+    if (_type == GestureViewControllerTypeSetting) {
+        // 进来先清空存的第一个密码
+        [PCCircleViewConst saveGesture:nil Key:gestureOneSaveKey];
+    }
 }
 
 - (instancetype)init
@@ -89,7 +91,7 @@
         case GestureViewControllerTypeSetting:
             [self setupSubViewsSettingVc];
             break;
-        case GestureViewControllerTypeLogin:
+        case GestureViewControllerTypeVerify:
             [self setupSubViewsLoginVc];
             break;
         default:
@@ -135,7 +137,7 @@
 #pragma mark - 登陆手势密码界面
 - (void)setupSubViewsLoginVc
 {
-    [self.lockView setType:CircleViewTypeLogin];
+    [self.lockView setType:CircleViewTypeVerify];
     
     // 头像
     UIImageView  *imageView = [[UIImageView alloc] init];
@@ -178,7 +180,7 @@
             [self.resetBtn setHidden:YES];
             
             // 2.infoView取消选中
-            [self infoViewDeselectedSubviews];
+            [_infoView reset];
             
             // 3.msgLabel提示文字复位
             [self.msgLabel showNormalMsg:gestureTextBeforeSet];
@@ -202,32 +204,21 @@
     }
 }
 
-#pragma mark - circleView - delegate
-#pragma mark - circleView - delegate - setting
-- (void)circleView:(PCCircleView *)view type:(CircleViewType)type connectCirclesLessThanNeedWithGesture:(NSString *)gesture
+#pragma mark - CircleViewDelegate
+- (void)circleView:(PCCircleView *)view didCompleteSetFirstGesture:(NSString *)gesture result:(BOOL)success
 {
-    NSString *gestureOne = [PCCircleViewConst getGestureWithKey:gestureOneSaveKey];
-
-    // 看是否存在第一个密码
-    if ([gestureOne length]) {
-        [self.resetBtn setHidden:NO];
-        [self.msgLabel showWarnMsgAndShake:gestureTextDrawAgainError];
+    if (success) {
+        NSLog(@"获得第一个手势密码%@", gesture);
+        [self.msgLabel showWarnMsg:gestureTextDrawAgain];
+        
+        // infoView展示对应选中的圆
+        [_infoView selectedCirclesWithGesture:gesture];
     } else {
-        NSLog(@"密码长度不合法%@", gesture);
         [self.msgLabel showWarnMsgAndShake:gestureTextConnectLess];
     }
 }
 
-- (void)circleView:(PCCircleView *)view type:(CircleViewType)type didCompleteSetFirstGesture:(NSString *)gesture
-{
-    NSLog(@"获得第一个手势密码%@", gesture);
-    [self.msgLabel showWarnMsg:gestureTextDrawAgain];
-    
-    // infoView展示对应选中的圆
-    [self infoViewSelectedSubviewsSameAsCircleView:view];
-}
-
-- (void)circleView:(PCCircleView *)view type:(CircleViewType)type didCompleteSetSecondGesture:(NSString *)gesture result:(BOOL)equal
+- (void)circleView:(PCCircleView *)view didCompleteSetSecondGesture:(NSString *)gesture result:(BOOL)equal
 {
     NSLog(@"获得第二个手势密码%@",gesture);
     
@@ -236,7 +227,6 @@
         NSLog(@"两次手势匹配！可以进行本地化保存了");
         
         [self.msgLabel showWarnMsg:gestureTextSetSuccess];
-        [PCCircleViewConst saveGesture:gesture Key:gestureFinalSaveKey];
         [self.navigationController popToRootViewControllerAnimated:YES];
         
     } else {
@@ -247,12 +237,8 @@
     }
 }
 
-#pragma mark - circleView - delegate - login or verify gesture
-- (void)circleView:(PCCircleView *)view type:(CircleViewType)type didCompleteLoginGesture:(NSString *)gesture result:(BOOL)equal
+- (void)circleView:(PCCircleView *)view didCompleteVerifyGesture:(NSString *)gesture result:(BOOL)equal
 {
-    // 此时的type有两种情况 Login or verify
-    if (type == CircleViewTypeLogin) {
-        
         if (equal) {
             NSLog(@"登陆成功！");
             [self.navigationController popToRootViewControllerAnimated:YES];
@@ -260,41 +246,6 @@
             NSLog(@"密码错误！");
             [self.msgLabel showWarnMsgAndShake:gestureTextGestureVerifyError];
         }
-    } else if (type == CircleViewTypeVerify) {
-        
-        if (equal) {
-            NSLog(@"验证成功，跳转到设置手势界面");
-            
-        } else {
-            NSLog(@"原手势密码输入错误！");
-            
-        }
-    }
-}
-
-#pragma mark - infoView展示方法
-#pragma mark - 让infoView对应按钮选中
-- (void)infoViewSelectedSubviewsSameAsCircleView:(PCCircleView *)circleView
-{
-    for (PCCircle *circle in circleView.subviews) {
-        
-        if (circle.state == CircleStateSelected || circle.state == CircleStateLastOneSelected) {
-            
-            for (PCCircle *infoCircle in self.infoView.subviews) {
-                if (infoCircle.tag == circle.tag) {
-                    [infoCircle setState:CircleStateSelected];
-                }
-            }
-        }
-    }
-}
-
-#pragma mark - 让infoView对应按钮取消选中
-- (void)infoViewDeselectedSubviews
-{
-    [self.infoView.subviews enumerateObjectsUsingBlock:^(PCCircle *obj, NSUInteger idx, BOOL *stop) {
-        [obj setState:CircleStateNormal];
-    }];
 }
 
 @end

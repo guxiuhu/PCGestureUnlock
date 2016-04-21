@@ -10,8 +10,7 @@
 
 @implementation PCCircleInfoView
 
-- (instancetype)init
-{
+- (instancetype)init {
     if (self = [super init]) {
         // 解锁视图准备
         [self lockViewPrepare];
@@ -19,8 +18,7 @@
     return self;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
+- (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
         // 解锁视图准备
         [self lockViewPrepare];
@@ -35,7 +33,7 @@
     
     self.backgroundColor = CircleBackgroundColor;
     
-    for (NSUInteger i=0; i<9; i++) {
+    for (NSUInteger i = 0; i < 9; i++) {
         
         PCCircle *circle = [[PCCircle alloc] init];
         circle.type = CircleTypeInfo;
@@ -69,5 +67,22 @@
     }];
 }
 
+- (void)selectedCirclesWithGesture:(NSString *)gesture {
+    for (NSInteger i = 0; i < gesture.length; i++) {
+        NSString *number = [gesture substringWithRange:NSMakeRange(i, 1)];
+        for (PCCircle *circle in self.subviews) {
+            if (circle.tag == number.integerValue) {
+                circle.state = CircleStateSelected;
+                break;
+            }
+        }
+    }
+}
+
+- (void)reset {
+    [self.subviews enumerateObjectsUsingBlock:^(PCCircle *circle, NSUInteger idx, BOOL *stop) {
+        circle.state = CircleStateNormal;
+    }];
+}
 @end
 

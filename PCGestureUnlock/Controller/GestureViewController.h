@@ -1,17 +1,17 @@
 
 #import <UIKit/UIKit.h>
 
-typedef enum{
+typedef NS_ENUM(NSInteger, GestureViewControllerType){
     GestureViewControllerTypeSetting = 1,
-    GestureViewControllerTypeLogin
-}GestureViewControllerType;
+    GestureViewControllerTypeVerify,
+    GestureViewControllerTypeModify     //先验证再设置
+};
 
-typedef enum{
+typedef NS_ENUM(NSInteger, buttonTag){
     buttonTagReset = 1,
     buttonTagManager,
     buttonTagForget
-    
-}buttonTag;
+};
 
 @interface GestureViewController : UIViewController
 

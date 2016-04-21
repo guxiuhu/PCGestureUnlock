@@ -52,17 +52,14 @@
 }
 
 #pragma mark - login or verify gesture
-- (void)circleView:(PCCircleView *)view type:(CircleViewType)type didCompleteLoginGesture:(NSString *)gesture result:(BOOL)equal
-{
-    if (type == CircleViewTypeVerify) {
-        
+- (void)circleView:(PCCircleView *)view didCompleteVerifyGesture:(NSString *)gesture result:(BOOL)equal {
         if (equal) {
             NSLog(@"验证成功");
-            
+            [self.msgLabel showNormalMsg:@"密码正确"];
             if (self.isToSetNewGesture) {
                 GestureViewController *gestureVc = [[GestureViewController alloc] init];
                 [gestureVc setType:GestureViewControllerTypeSetting];
-                [self.navigationController pushViewController:gestureVc animated:YES];
+                [self.navigationController pushViewController:gestureVc animated:NO];
             } else {
                 [self.navigationController popToRootViewControllerAnimated:YES];
             }
@@ -71,7 +68,6 @@
             NSLog(@"密码错误！");
             [self.msgLabel showWarnMsgAndShake:gestureTextGestureVerifyError];
         }
-    }
 }
 
 @end

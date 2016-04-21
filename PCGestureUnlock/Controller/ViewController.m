@@ -40,9 +40,9 @@
             break;
         case 2:
         {
-            if ([[PCCircleViewConst getGestureWithKey:gestureFinalSaveKey] length]) {
+            if ([PCCircleViewConst hasGesture]) {
                 GestureViewController *gestureVc = [[GestureViewController alloc] init];
-                [gestureVc setType:GestureViewControllerTypeLogin];
+                gestureVc.type = GestureViewControllerTypeVerify;
                 [self.navigationController pushViewController:gestureVc animated:YES];
             } else {
                 UIAlertView *alerView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"暂未设置手势密码，是否前往设置" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"设置", nil];
