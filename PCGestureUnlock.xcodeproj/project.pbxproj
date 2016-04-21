@@ -15,17 +15,17 @@
 		3ABFF5E71B288F54008190C6 /* GestureVerifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ABFF5D51B288F54008190C6 /* GestureVerifyViewController.m */; };
 		3ABFF5E81B288F54008190C6 /* GestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ABFF5D71B288F54008190C6 /* GestureViewController.m */; };
 		3ABFF5E91B288F54008190C6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ABFF5D91B288F54008190C6 /* ViewController.m */; };
-		3ABFF5EA1B288F54008190C6 /* PCCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ABFF5DC1B288F54008190C6 /* PCCircle.m */; };
-		3ABFF5EB1B288F54008190C6 /* PCCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ABFF5DE1B288F54008190C6 /* PCCircleView.m */; };
-		3ABFF5EC1B288F54008190C6 /* PCCircleViewConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ABFF5E01B288F54008190C6 /* PCCircleViewConst.m */; };
-		3ABFF5ED1B288F54008190C6 /* CALayer+Anim.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ABFF5E31B288F54008190C6 /* CALayer+Anim.m */; };
-		3ABFF5EE1B288F54008190C6 /* PCLockLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ABFF5E61B288F54008190C6 /* PCLockLabel.m */; };
-		3ABFF5F11B288F80008190C6 /* PCCircleInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ABFF5F01B288F80008190C6 /* PCCircleInfoView.m */; };
 		3ABFF5F41B288FBE008190C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ABFF5F21B288FBE008190C6 /* Main.storyboard */; };
 		3AE570F41B2DE18F008B3CBD /* arrowDirctions.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3AE570F01B2DE18F008B3CBD /* arrowDirctions.gif */; };
 		3AE570F51B2DE18F008B3CBD /* ErrorDisplay.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3AE570F11B2DE18F008B3CBD /* ErrorDisplay.gif */; };
 		3AE570F61B2DE18F008B3CBD /* JumpConnect.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3AE570F21B2DE18F008B3CBD /* JumpConnect.gif */; };
 		3AE570F71B2DE18F008B3CBD /* settingGesture.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3AE570F31B2DE18F008B3CBD /* settingGesture.gif */; };
+		EBE627481CC8D7440037ADD3 /* PCCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE6273B1CC8D7440037ADD3 /* PCCircle.m */; };
+		EBE627491CC8D7440037ADD3 /* PCCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE6273D1CC8D7440037ADD3 /* PCCircleView.m */; };
+		EBE6274A1CC8D7440037ADD3 /* PCCircleViewConst.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE6273F1CC8D7440037ADD3 /* PCCircleViewConst.m */; };
+		EBE6274B1CC8D7440037ADD3 /* CALayer+Anim.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE627421CC8D7440037ADD3 /* CALayer+Anim.m */; };
+		EBE6274C1CC8D7440037ADD3 /* PCCircleInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE627451CC8D7440037ADD3 /* PCCircleInfoView.m */; };
+		EBE6274D1CC8D7440037ADD3 /* PCLockLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE627471CC8D7440037ADD3 /* PCLockLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,23 +55,23 @@
 		3ABFF5D71B288F54008190C6 /* GestureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GestureViewController.m; sourceTree = "<group>"; };
 		3ABFF5D81B288F54008190C6 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		3ABFF5D91B288F54008190C6 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		3ABFF5DB1B288F54008190C6 /* PCCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCCircle.h; sourceTree = "<group>"; };
-		3ABFF5DC1B288F54008190C6 /* PCCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCCircle.m; sourceTree = "<group>"; };
-		3ABFF5DD1B288F54008190C6 /* PCCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCCircleView.h; sourceTree = "<group>"; };
-		3ABFF5DE1B288F54008190C6 /* PCCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCCircleView.m; sourceTree = "<group>"; };
-		3ABFF5DF1B288F54008190C6 /* PCCircleViewConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCCircleViewConst.h; sourceTree = "<group>"; };
-		3ABFF5E01B288F54008190C6 /* PCCircleViewConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCCircleViewConst.m; sourceTree = "<group>"; };
-		3ABFF5E21B288F54008190C6 /* CALayer+Anim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Anim.h"; sourceTree = "<group>"; };
-		3ABFF5E31B288F54008190C6 /* CALayer+Anim.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Anim.m"; sourceTree = "<group>"; };
-		3ABFF5E51B288F54008190C6 /* PCLockLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCLockLabel.h; sourceTree = "<group>"; };
-		3ABFF5E61B288F54008190C6 /* PCLockLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCLockLabel.m; sourceTree = "<group>"; };
-		3ABFF5EF1B288F80008190C6 /* PCCircleInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCCircleInfoView.h; sourceTree = "<group>"; };
-		3ABFF5F01B288F80008190C6 /* PCCircleInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCCircleInfoView.m; sourceTree = "<group>"; };
 		3ABFF5F31B288FBE008190C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3AE570F01B2DE18F008B3CBD /* arrowDirctions.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = arrowDirctions.gif; sourceTree = "<group>"; };
 		3AE570F11B2DE18F008B3CBD /* ErrorDisplay.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ErrorDisplay.gif; sourceTree = "<group>"; };
 		3AE570F21B2DE18F008B3CBD /* JumpConnect.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = JumpConnect.gif; sourceTree = "<group>"; };
 		3AE570F31B2DE18F008B3CBD /* settingGesture.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = settingGesture.gif; sourceTree = "<group>"; };
+		EBE6273A1CC8D7440037ADD3 /* PCCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCCircle.h; sourceTree = "<group>"; };
+		EBE6273B1CC8D7440037ADD3 /* PCCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCCircle.m; sourceTree = "<group>"; };
+		EBE6273C1CC8D7440037ADD3 /* PCCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCCircleView.h; sourceTree = "<group>"; };
+		EBE6273D1CC8D7440037ADD3 /* PCCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCCircleView.m; sourceTree = "<group>"; };
+		EBE6273E1CC8D7440037ADD3 /* PCCircleViewConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCCircleViewConst.h; sourceTree = "<group>"; };
+		EBE6273F1CC8D7440037ADD3 /* PCCircleViewConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCCircleViewConst.m; sourceTree = "<group>"; };
+		EBE627411CC8D7440037ADD3 /* CALayer+Anim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Anim.h"; sourceTree = "<group>"; };
+		EBE627421CC8D7440037ADD3 /* CALayer+Anim.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Anim.m"; sourceTree = "<group>"; };
+		EBE627441CC8D7440037ADD3 /* PCCircleInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCCircleInfoView.h; sourceTree = "<group>"; };
+		EBE627451CC8D7440037ADD3 /* PCCircleInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCCircleInfoView.m; sourceTree = "<group>"; };
+		EBE627461CC8D7440037ADD3 /* PCLockLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCLockLabel.h; sourceTree = "<group>"; };
+		EBE627471CC8D7440037ADD3 /* PCLockLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCLockLabel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,10 +113,8 @@
 		3ABFF5AC1B288D75008190C6 /* PCGestureUnlock */ = {
 			isa = PBXGroup;
 			children = (
+				EBE627381CC8D7440037ADD3 /* PCGestureUnlock */,
 				3ABFF5D31B288F54008190C6 /* Controller */,
-				3ABFF5DA1B288F54008190C6 /* Framework */,
-				3ABFF5E11B288F54008190C6 /* Gategory */,
-				3ABFF5E41B288F54008190C6 /* View */,
 				3ABFF5B11B288D75008190C6 /* AppDelegate.h */,
 				3ABFF5B21B288D75008190C6 /* AppDelegate.m */,
 				3ABFF5BA1B288D75008190C6 /* Images.xcassets */,
@@ -170,36 +168,45 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		3ABFF5DA1B288F54008190C6 /* Framework */ = {
+		EBE627381CC8D7440037ADD3 /* PCGestureUnlock */ = {
 			isa = PBXGroup;
 			children = (
-				3ABFF5DB1B288F54008190C6 /* PCCircle.h */,
-				3ABFF5DC1B288F54008190C6 /* PCCircle.m */,
-				3ABFF5DD1B288F54008190C6 /* PCCircleView.h */,
-				3ABFF5DE1B288F54008190C6 /* PCCircleView.m */,
-				3ABFF5DF1B288F54008190C6 /* PCCircleViewConst.h */,
-				3ABFF5E01B288F54008190C6 /* PCCircleViewConst.m */,
+				EBE627391CC8D7440037ADD3 /* Base */,
+				EBE627401CC8D7440037ADD3 /* Gategory */,
+				EBE627431CC8D7440037ADD3 /* View */,
 			);
-			name = Framework;
-			path = FrameWork;
+			path = PCGestureUnlock;
 			sourceTree = "<group>";
 		};
-		3ABFF5E11B288F54008190C6 /* Gategory */ = {
+		EBE627391CC8D7440037ADD3 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				3ABFF5E21B288F54008190C6 /* CALayer+Anim.h */,
-				3ABFF5E31B288F54008190C6 /* CALayer+Anim.m */,
+				EBE6273A1CC8D7440037ADD3 /* PCCircle.h */,
+				EBE6273B1CC8D7440037ADD3 /* PCCircle.m */,
+				EBE6273C1CC8D7440037ADD3 /* PCCircleView.h */,
+				EBE6273D1CC8D7440037ADD3 /* PCCircleView.m */,
+				EBE6273E1CC8D7440037ADD3 /* PCCircleViewConst.h */,
+				EBE6273F1CC8D7440037ADD3 /* PCCircleViewConst.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		EBE627401CC8D7440037ADD3 /* Gategory */ = {
+			isa = PBXGroup;
+			children = (
+				EBE627411CC8D7440037ADD3 /* CALayer+Anim.h */,
+				EBE627421CC8D7440037ADD3 /* CALayer+Anim.m */,
 			);
 			path = Gategory;
 			sourceTree = "<group>";
 		};
-		3ABFF5E41B288F54008190C6 /* View */ = {
+		EBE627431CC8D7440037ADD3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				3ABFF5EF1B288F80008190C6 /* PCCircleInfoView.h */,
-				3ABFF5F01B288F80008190C6 /* PCCircleInfoView.m */,
-				3ABFF5E51B288F54008190C6 /* PCLockLabel.h */,
-				3ABFF5E61B288F54008190C6 /* PCLockLabel.m */,
+				EBE627441CC8D7440037ADD3 /* PCCircleInfoView.h */,
+				EBE627451CC8D7440037ADD3 /* PCCircleInfoView.m */,
+				EBE627461CC8D7440037ADD3 /* PCLockLabel.h */,
+				EBE627471CC8D7440037ADD3 /* PCLockLabel.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -310,14 +317,14 @@
 			files = (
 				3ABFF5E81B288F54008190C6 /* GestureViewController.m in Sources */,
 				3ABFF5E71B288F54008190C6 /* GestureVerifyViewController.m in Sources */,
-				3ABFF5EE1B288F54008190C6 /* PCLockLabel.m in Sources */,
 				3ABFF5B31B288D75008190C6 /* AppDelegate.m in Sources */,
 				3ABFF5B01B288D75008190C6 /* main.m in Sources */,
-				3ABFF5EB1B288F54008190C6 /* PCCircleView.m in Sources */,
-				3ABFF5F11B288F80008190C6 /* PCCircleInfoView.m in Sources */,
-				3ABFF5EC1B288F54008190C6 /* PCCircleViewConst.m in Sources */,
-				3ABFF5ED1B288F54008190C6 /* CALayer+Anim.m in Sources */,
-				3ABFF5EA1B288F54008190C6 /* PCCircle.m in Sources */,
+				EBE627491CC8D7440037ADD3 /* PCCircleView.m in Sources */,
+				EBE6274C1CC8D7440037ADD3 /* PCCircleInfoView.m in Sources */,
+				EBE6274D1CC8D7440037ADD3 /* PCLockLabel.m in Sources */,
+				EBE6274A1CC8D7440037ADD3 /* PCCircleViewConst.m in Sources */,
+				EBE6274B1CC8D7440037ADD3 /* CALayer+Anim.m in Sources */,
+				EBE627481CC8D7440037ADD3 /* PCCircle.m in Sources */,
 				3ABFF5E91B288F54008190C6 /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
