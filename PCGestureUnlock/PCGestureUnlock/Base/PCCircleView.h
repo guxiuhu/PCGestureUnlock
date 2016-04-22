@@ -5,6 +5,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PCCircle.h"
+#import "PCCircleViewConst.h"
 
 /**
  *  手势密码界面用途类型
@@ -79,6 +81,6 @@ typedef NS_ENUM(NSInteger, CircleViewType) {
 - (instancetype)initWithType:(CircleViewType)type clip:(BOOL)clip arrow:(BOOL)arrow;
 
 + (BOOL)hasGesture;
-+ (void)resetGesture;
++ (void)removeGesture;
 
 @end

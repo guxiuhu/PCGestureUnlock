@@ -1,10 +1,8 @@
 
 #import "GestureViewController.h"
 #import "PCCircleView.h"
-#import "PCCircleViewConst.h"
 #import "PCLockLabel.h"
 #import "PCCircleInfoView.h"
-#import "PCCircle.h"
 
 @interface GestureViewController ()<PCCircleViewDelegate>
 
@@ -36,13 +34,13 @@
 {
     [super viewWillAppear:animated];
     
-//    if (self.type == GestureViewControllerTypeVerify) {
-//        [self.navigationController setNavigationBarHidden:YES animated:animated];
-//    }
+    //    if (self.type == GestureViewControllerTypeVerify) {
+    //        [self.navigationController setNavigationBarHidden:YES animated:animated];
+    //    }
     
     if (_type == GestureViewControllerTypeSetting) {
         // 进来先清空存的第一个密码
-        [PCCircleView resetGesture];
+        [PCCircleView removeGesture];
     }
 }
 
@@ -186,7 +184,7 @@
             [self.msgLabel showNormalMsg:gestureTextBeforeSet];
             
             // 4.清除之前存储的密码
-            [PCCircleView resetGesture];
+            [PCCircleView removeGesture];
         }
             break;
         case buttonTagManager:
@@ -209,7 +207,7 @@
 {
     if (success) {
         NSLog(@"获得第一个手势密码%@", gesture);
-        [self.msgLabel showWarnMsg:gestureTextDrawAgain];
+        [self.msgLabel showNormalMsg:gestureTextDrawAgain];
         
         // infoView展示对应选中的圆
         [_infoView selectedCirclesWithGesture:gesture];
@@ -223,10 +221,9 @@
     NSLog(@"获得第二个手势密码%@",gesture);
     
     if (equal) {
-        
         NSLog(@"两次手势匹配！");
         
-        [self.msgLabel showWarnMsg:gestureTextSetSuccess];
+        [self.msgLabel showNormalMsg:gestureTextSetSuccess];
         [self.navigationController popToRootViewControllerAnimated:YES];
         
     } else {
@@ -239,13 +236,13 @@
 
 - (void)circleView:(PCCircleView *)view didCompleteVerifyGesture:(NSString *)gesture result:(BOOL)equal
 {
-        if (equal) {
-            NSLog(@"登陆成功！");
-            [self.navigationController popToRootViewControllerAnimated:YES];
-        } else {
-            NSLog(@"密码错误！");
-            [self.msgLabel showWarnMsgAndShake:gestureTextGestureVerifyError];
-        }
+    if (equal) {
+        NSLog(@"登陆成功！");
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    } else {
+        NSLog(@"密码错误！");
+        [self.msgLabel showWarnMsgAndShake:gestureTextGestureVerifyError];
+    }
 }
 
 @end

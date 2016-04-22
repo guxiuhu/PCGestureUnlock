@@ -495,7 +495,8 @@
     return gesture.length > 0 ? YES : NO;
 }
 
-+ (void)resetGesture {
++ (void)removeGesture {
     [PCCircleViewConst saveGesture:nil Key:gestureOneSaveKey];
+    [PCCircleViewConst saveGesture:nil Key:gestureFinalSaveKey];
 }
 @end

@@ -1,6 +1,5 @@
 
 #import "GestureVerifyViewController.h"
-#import "PCCircleViewConst.h"
 #import "PCCircleView.h"
 #import "PCLockLabel.h"
 #import "GestureViewController.h"
