@@ -2,7 +2,7 @@
 #import "ViewController.h"
 #import "GestureViewController.h"
 #import "GestureVerifyViewController.h"
-#import "PCCircleViewConst.h"
+#import "PCCircleView.h"
 
 @interface ViewController ()<UIAlertViewDelegate>
 
@@ -40,7 +40,7 @@
             break;
         case 2:
         {
-            if ([PCCircleViewConst hasGesture]) {
+            if ([PCCircleView hasGesture]) {
                 GestureViewController *gestureVc = [[GestureViewController alloc] init];
                 gestureVc.type = GestureViewControllerTypeVerify;
                 [self.navigationController pushViewController:gestureVc animated:YES];

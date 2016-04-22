@@ -496,4 +496,8 @@
     NSString *gesture = [PCCircleViewConst getGestureWithKey:gestureFinalSaveKey];
     return gesture.length > 0 ? YES : NO;
 }
+
++ (void)resetGesture {
+    [PCCircleViewConst saveGesture:nil Key:gestureOneSaveKey];
+}
 @end

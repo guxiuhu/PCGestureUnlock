@@ -79,5 +79,6 @@ typedef NS_ENUM(NSInteger, CircleViewType) {
 - (instancetype)initWithType:(CircleViewType)type clip:(BOOL)clip arrow:(BOOL)arrow;
 
 + (BOOL)hasGesture;
++ (void)resetGesture;
 
 @end

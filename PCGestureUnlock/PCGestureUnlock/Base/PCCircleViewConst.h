@@ -210,6 +210,4 @@
  */
 + (NSString *)getGestureWithKey:(NSString *)key;
 
-+ (BOOL)hasGesture;
-
 @end
