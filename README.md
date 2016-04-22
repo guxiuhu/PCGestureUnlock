@@ -1,5 +1,7 @@
 # PCGestureUnlock
 ===================
+##### 参考了  [CharlinFeng](https://github.com/CharlinFeng) / [CoreLock](https://github.com/CharlinFeng/CoreLock)
+
 ###目前最全面最高仿支付宝的手势解锁，而且提供方法进行参数修改，能解决项目开发中所有手势解锁的开发
 ------------------
 宣言：不仅仅是支付宝手势解锁，它很好很强大~
