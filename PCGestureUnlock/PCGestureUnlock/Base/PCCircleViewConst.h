@@ -6,11 +6,28 @@
 #define kScreenW [UIScreen mainScreen].bounds.size.width
 #define kScreenH [UIScreen mainScreen].bounds.size.height
 
+#pragma mark - CircleView
 /**
  *  解锁背景色
  */
 #define CircleViewBackgroundColor rgba(13,52,89,1)
 
+/**
+ *  整个解锁View居中时，距离屏幕左边和右边的距离
+ */
+#define CircleViewEdgeMargin 30.0f
+
+/**
+ *  整个解锁View的Center.y值 在当前屏幕的3/5位置
+ */
+#define CircleViewCenterY kScreenH * 3.0 / 5.0
+
+/**
+ *  连接的圆最少的个数
+ */
+#define CircleSetCountLeast 4
+
+#pragma mark - Circle
 /**
  *  普通状态下单个圆背景色
  */
@@ -27,6 +44,22 @@
 #define CircleErrorBackgroundColor  [[UIColor redColor] colorWithAlphaComponent:0.3];
 
 /**
+ *  单个圆的半径
+ */
+#define CircleRadius 30.0f
+
+/**
+ *  九宫格展示infoView 单个圆的半径
+ */
+#define CircleInfoRadius 5
+
+/**
+ *  单个圆的圆心
+ */
+#define CircleCenter CGPointMake(CircleRadius, CircleRadius)
+
+#pragma mark - 外空心圆
+/**
  *  普通状态下外空心圆颜色
  */
 #define CircleStateNormalOutsideColor rgba(241,241,241,1)
@@ -42,6 +75,12 @@
 #define CircleStateErrorOutsideColor rgba(254,82,92,1)
 
 /**
+ *  空心圆圆环宽度
+ */
+#define CircleEdgeWidth 1.0f
+
+#pragma mark - 内实心圆
+/**
  *  普通状态下内实心圆颜色
  */
 #define CircleStateNormalInsideColor [UIColor clearColor]
@@ -56,6 +95,12 @@
  */
 #define CircleStateErrorInsideColor rgba(254,82,92,1)
 
+/**
+ *  内部实心圆占空心圆的比例系数
+ */
+#define CircleRadio 0.4
+
+#pragma mark - 三角形
 /**
  *  普通状态下三角形颜色
  */
@@ -76,6 +121,7 @@
  */
 #define kTrangleLength 10.0f
 
+#pragma mark - 连线
 /**
  *  普通时连线颜色
  */
@@ -91,46 +137,7 @@
  */
 #define CircleConnectLineWidth 1.0f
 
-/**
- *  单个圆的半径
- */
-#define CircleRadius 30.0f
-
-/**
- *  单个圆的圆心
- */
-#define CircleCenter CGPointMake(CircleRadius, CircleRadius)
-
-/**
- *  空心圆圆环宽度
- */
-#define CircleEdgeWidth 1.0f
-
-/**
- *  九宫格展示infoView 单个圆的半径
- */
-#define CircleInfoRadius 5
-
-/**
- *  内部实心圆占空心圆的比例系数
- */
-#define CircleRadio 0.4
-
-/**
- *  整个解锁View居中时，距离屏幕左边和右边的距离
- */
-#define CircleViewEdgeMargin 30.0f
-
-/**
- *  整个解锁View的Center.y值 在当前屏幕的3/5位置
- */
-#define CircleViewCenterY kScreenH * 3.0 / 5.0
-
-/**
- *  连接的圆最少的个数
- */
-#define CircleSetCountLeast 4
-
+#pragma mark - other
 /**
  *  错误状态下回显的时间
  */
@@ -146,6 +153,7 @@
  */
 #define gestureOneSaveKey @"gestureOneSaveKey"
 
+#pragma mark - 文字
 /**
  *  普通状态下文字提示的颜色
  */
@@ -164,7 +172,7 @@
 /**
  *  设置时，连线个数少，提示文字
  */
-#define gestureTextConnectLess [NSString stringWithFormat:@"最少连接%d个点，请重新输入", CircleSetCountLeast]
+#define gestureTextConnectLess [NSString stringWithFormat:@"最少连接%d个点，请重新绘制", CircleSetCountLeast]
 
 /**
  *  确认图案，提示再次绘制
@@ -191,6 +199,7 @@
  */
 #define gestureTextGestureVerifyError @"密码错误"
 
+#pragma mark - PCCircleViewConst
 @interface PCCircleViewConst : NSObject
 
 /**

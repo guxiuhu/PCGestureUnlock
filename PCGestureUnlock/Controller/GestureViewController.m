@@ -6,7 +6,7 @@
 #import "PCCircleInfoView.h"
 #import "PCCircle.h"
 
-@interface GestureViewController ()<CircleViewDelegate>
+@interface GestureViewController ()<PCCircleViewDelegate>
 
 /**
  *  重设按钮

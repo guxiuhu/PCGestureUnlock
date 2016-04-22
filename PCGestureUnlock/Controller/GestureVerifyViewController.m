@@ -5,7 +5,7 @@
 #import "PCLockLabel.h"
 #import "GestureViewController.h"
 
-@interface GestureVerifyViewController ()<CircleViewDelegate>
+@interface GestureVerifyViewController ()<PCCircleViewDelegate>
 
 /**
  *  文字提示Label

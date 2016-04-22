@@ -62,7 +62,7 @@
 /*
  *  解锁视图准备
  */
-- (void)lockViewPrepare{
+- (void)lockViewPrepare {
     
     [self setFrame:CGRectMake(0, 0,
                               [UIScreen mainScreen].bounds.size.width - CircleViewEdgeMargin * 2,
@@ -234,11 +234,10 @@
  *  解锁类型：设置 手势路径的处理
  */
 - (void)gestureEndByTypeSettingWithGesture:(NSString *)gesture length:(NSUInteger)length {
-    if (length < CircleSetCountLeast) {     // 连接少于最少个数 （<4个）
+    if (length < CircleSetCountLeast) {     // 连接少于最少个数
         NSString *gestureOne = [PCCircleViewConst getGestureWithKey:gestureOneSaveKey];
         
-        // 看是否存在第一个密码
-        if (gestureOne.length > 0) {
+        if (gestureOne.length > 0) {    // 看是否存在第一个密码
             if ([self.delegate respondsToSelector:@selector(circleView:didCompleteSetSecondGesture:result:)]) {
                 [self.delegate circleView:self didCompleteSetSecondGesture:gesture result:NO];
             }
@@ -251,7 +250,7 @@
         // 2.改变状态为error
         [self changeCircleInCircleSetWithState:CircleStateError];
         
-    } else {        // 连接多于最少个数 （>=4个）
+    } else {        // 连接多于最少个数
         NSString *gestureOne = [PCCircleViewConst getGestureWithKey:gestureOneSaveKey];
         if (gestureOne.length < CircleSetCountLeast) { // 接收并存储第一个密码
             // 记录第一次密码
@@ -263,13 +262,12 @@
             }
         } else { // 接受第二个密码并与第一个密码匹配，一致后存储起来
             BOOL equal = [gesture isEqualToString:[PCCircleViewConst getGestureWithKey:gestureOneSaveKey]]; // 匹配两次手势
-            if (equal){
-                // 一致，存储密码
+            if (equal){     // 一致，存储密码
                 [PCCircleViewConst saveGesture:gesture Key:gestureFinalSaveKey];
-            } else {
-                // 不一致，重绘回显
+            } else {        // 不一致，重绘回显
                 [self changeCircleInCircleSetWithState:CircleStateError];
             }
+            
             // 通知代理
             if ([self.delegate respondsToSelector:@selector(circleView:didCompleteSetSecondGesture:result:)]) {
                 [self.delegate circleView:self didCompleteSetSecondGesture:gesture result:equal];

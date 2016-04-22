@@ -16,7 +16,7 @@ typedef NS_ENUM(NSInteger, CircleViewType) {
 
 @class PCCircleView;
 
-@protocol CircleViewDelegate <NSObject>
+@protocol PCCircleViewDelegate <NSObject>
 
 @optional
 
@@ -25,7 +25,7 @@ typedef NS_ENUM(NSInteger, CircleViewType) {
  *
  *  @param view    circleView
  *  @param gesture 第一个次保存的密码
- *  @param success 是否成功
+ *  @param success 是否成功(通常失败是选中的数量不够)
  */
 - (void)circleView:(PCCircleView *)view didCompleteSetFirstGesture:(NSString *)gesture result:(BOOL)success;
 
@@ -67,7 +67,7 @@ typedef NS_ENUM(NSInteger, CircleViewType) {
 @property (nonatomic, assign) CircleViewType type;
 
 // 代理
-@property (nonatomic, weak) id<CircleViewDelegate> delegate;
+@property (nonatomic, weak) id<PCCircleViewDelegate> delegate;
 
 /**
  *  初始化方法
