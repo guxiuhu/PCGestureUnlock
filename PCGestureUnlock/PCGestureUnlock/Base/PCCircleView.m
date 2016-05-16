@@ -116,6 +116,10 @@
     }];
 }
 
+- (void)willMoveToSuperview:(nullable UIView *)newSuperview {
+    newSuperview.backgroundColor = CircleViewBackgroundColor;
+}
+
 #pragma mark - touch began - moved - end
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [self gestureEndResetMembers];

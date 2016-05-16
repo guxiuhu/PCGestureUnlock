@@ -25,10 +25,6 @@
         
     _verifyWrongTimes = 0;
     
-    UIImageView *bgImageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
-    [self.view addSubview:bgImageView];
-    bgImageView.image = [UIImage imageNamed:@"bg_login"];
-    
     PCCircleView *lockView = [[PCCircleView alloc] initWithType:(_type == AYGestureTypeSetting ? CircleViewTypeSetting : CircleViewTypeVerify) arrow:NO];
     lockView.delegate = (id<PCCircleViewDelegate>)self;
     [self.view addSubview:lockView];
