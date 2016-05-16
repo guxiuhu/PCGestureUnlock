@@ -71,6 +71,15 @@ typedef NS_ENUM(NSInteger, CircleViewType) {
 // 代理
 @property (nonatomic, weak) id<PCCircleViewDelegate> delegate;
 
+
+/**
+ *  初始化方法
+ *
+ *  @param type  类型
+ *  @param arrow 是否显示三角形箭头，显示则剪裁。
+ */
+- (instancetype)initWithType:(CircleViewType)type arrow:(BOOL)arrow;
+
 /**
  *  初始化方法
  *
@@ -79,8 +88,5 @@ typedef NS_ENUM(NSInteger, CircleViewType) {
  *  @param arrow 是否显示三角形箭头
  */
 - (instancetype)initWithType:(CircleViewType)type clip:(BOOL)clip arrow:(BOOL)arrow;
-
-+ (BOOL)hasGesture;
-+ (void)removeGesture;
 
 @end

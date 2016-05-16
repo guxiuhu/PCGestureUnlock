@@ -31,6 +31,10 @@
 }
 
 #pragma mark - 初始化方法
+- (instancetype)initWithType:(CircleViewType)type arrow:(BOOL)arrow {
+    return [self initWithType:type clip:arrow arrow:arrow];
+}
+
 - (instancetype)initWithType:(CircleViewType)type clip:(BOOL)clip arrow:(BOOL)arrow {
     if (self = [super init]) {
         // 解锁视图准备
@@ -489,14 +493,4 @@
     return centerCircle; // 注意：可能返回的是nil，就是当前点不在圆内
 }
 
-#pragma mark - other
-+ (BOOL)hasGesture {
-    NSString *gesture = [PCCircleViewConst getGestureWithKey:gestureFinalSaveKey];
-    return gesture.length > 0 ? YES : NO;
-}
-
-+ (void)removeGesture {
-    [PCCircleViewConst saveGesture:nil Key:gestureOneSaveKey];
-    [PCCircleViewConst saveGesture:nil Key:gestureFinalSaveKey];
-}
 @end

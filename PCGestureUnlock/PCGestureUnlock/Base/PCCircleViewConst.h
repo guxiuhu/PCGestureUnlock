@@ -15,7 +15,7 @@
 /**
  *  整个解锁View居中时，距离屏幕左边和右边的距离
  */
-#define CircleViewEdgeMargin 30.0f
+#define CircleViewEdgeMargin 20.0
 
 /**
  *  整个解锁View的Center.y值 在当前屏幕的3/5位置
@@ -46,7 +46,7 @@
 /**
  *  单个圆的半径
  */
-#define CircleRadius 30.0f
+#define CircleRadius 35.0
 
 /**
  *  九宫格展示infoView 单个圆的半径
@@ -62,22 +62,22 @@
 /**
  *  普通状态下外空心圆颜色
  */
-#define CircleStateNormalOutsideColor rgba(241,241,241,1)
+#define CircleStateNormalOutsideColor [UIColor whiteColor]
 
 /**
  *  选中状态下外空心圆颜色
  */
-#define CircleStateSelectedOutsideColor rgba(34,178,246,1)
+#define CircleStateSelectedOutsideColor [UIColor clearColor]
 
 /**
  *  错误状态下外空心圆颜色
  */
-#define CircleStateErrorOutsideColor rgba(254,82,92,1)
+#define CircleStateErrorOutsideColor [UIColor clearColor]
 
 /**
  *  空心圆圆环宽度
  */
-#define CircleEdgeWidth 1.0f
+#define CircleEdgeWidth 1.5
 
 #pragma mark - 内实心圆
 /**
@@ -88,7 +88,7 @@
 /**
  *  选中状态下内实心圆颜色
  */
-#define CircleStateSelectedInsideColor rgba(34,178,246,1)
+#define CircleStateSelectedInsideColor rgba(254,215,62,1)
 
 /**
  *  错误状态内实心圆颜色
@@ -98,7 +98,7 @@
 /**
  *  内部实心圆占空心圆的比例系数
  */
-#define CircleRadio 0.4
+#define CircleRadio 0.5
 
 #pragma mark - 三角形
 /**
@@ -109,12 +109,12 @@
 /**
  *  选中状态下三角形颜色
  */
-#define CircleStateSelectedTrangleColor rgba(34,178,246,1)
+#define CircleStateSelectedTrangleColor CircleStateSelectedInsideColor
 
 /**
  *  错误状态三角形颜色
  */
-#define CircleStateErrorTrangleColor rgba(254,82,92,1)
+#define CircleStateErrorTrangleColor CircleStateErrorInsideColor
 
 /**
  *  三角形边长
@@ -125,17 +125,17 @@
 /**
  *  普通时连线颜色
  */
-#define CircleConnectLineNormalColor rgba(34,178,246,1)
+#define CircleConnectLineNormalColor CircleStateSelectedInsideColor
 
 /**
  *  错误时连线颜色
  */
-#define CircleConnectLineErrorColor rgba(254,82,92,1)
+#define CircleConnectLineErrorColor CircleStateErrorInsideColor
 
 /**
  *  连线宽度
  */
-#define CircleConnectLineWidth 1.0f
+#define CircleConnectLineWidth 3.0
 
 #pragma mark - other
 /**
@@ -153,11 +153,16 @@
  */
 #define gestureOneSaveKey @"gestureOneSaveKey"
 
+/**
+ *  最大验证出错次数
+ */
+#define gestureVerifyWrongMaxTimes   5
+
 #pragma mark - 文字
 /**
  *  普通状态下文字提示的颜色
  */
-#define textColorNormalState rgba(241,241,241,1)
+#define textColorNormalState [UIColor whiteColor]
 
 /**
  *  警告状态下文字提示的颜色
@@ -198,6 +203,11 @@
  *  密码错误
  */
 #define gestureTextGestureVerifyError @"密码错误"
+
+/**
+ *  请输入手势密码
+ */
+#define gestureTextGestureVerify    @"请输入手势密码"
 
 #pragma mark - PCCircleViewConst
 @interface PCCircleViewConst : NSObject

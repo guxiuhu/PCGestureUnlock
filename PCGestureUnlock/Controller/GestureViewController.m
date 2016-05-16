@@ -40,7 +40,7 @@
     
     if (_type == GestureViewControllerTypeSetting) {
         // 进来先清空存的第一个密码
-        [PCCircleView removeGesture];
+        [PCCircleViewConst saveGesture:nil Key:gestureOneSaveKey];
     }
 }
 
@@ -184,7 +184,8 @@
             [self.msgLabel showNormalMsg:gestureTextBeforeSet];
             
             // 4.清除之前存储的密码
-            [PCCircleView removeGesture];
+            [PCCircleViewConst saveGesture:nil Key:gestureOneSaveKey];
+            [PCCircleViewConst saveGesture:nil Key:gestureFinalSaveKey];
         }
             break;
         case buttonTagManager:

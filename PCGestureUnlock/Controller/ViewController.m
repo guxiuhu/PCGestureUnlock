@@ -3,6 +3,7 @@
 #import "GestureViewController.h"
 #import "GestureVerifyViewController.h"
 #import "PCCircleView.h"
+#import "AYGestureViewController.h"
 
 @interface ViewController ()<UIAlertViewDelegate>
 
@@ -40,7 +41,7 @@
             break;
         case 2:
         {
-            if ([PCCircleView hasGesture]) {
+            if ([PCCircleViewConst getGestureWithKey:gestureFinalSaveKey]) {
                 GestureViewController *gestureVc = [[GestureViewController alloc] init];
                 gestureVc.type = GestureViewControllerTypeVerify;
                 [self.navigationController pushViewController:gestureVc animated:YES];
@@ -62,6 +63,21 @@
             GestureVerifyViewController *gestureVerifyVc = [[GestureVerifyViewController alloc] init];
             gestureVerifyVc.isToSetNewGesture = YES;
             [self.navigationController pushViewController:gestureVerifyVc animated:YES];
+        }
+            break;
+        case 5:
+        {
+            AYGestureViewController *controller = [[AYGestureViewController alloc] init];
+            controller.type = [AYGestureViewController hasGesture] ? AYGestureTypeModify : AYGestureTypeSetting;
+            [self presentViewController:controller animated:YES completion:NULL];
+        }
+            break;
+            
+        case 6:
+        {
+            [AYGestureViewController removeGesture];
+            
+            [[[UIAlertView alloc] initWithTitle:@"手势密码已清除" message:nil delegate:nil cancelButtonTitle:@"关闭" otherButtonTitles:nil] show];
         }
             break;
         default:
