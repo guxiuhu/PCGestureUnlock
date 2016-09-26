@@ -272,6 +272,7 @@
             BOOL equal = [gesture isEqualToString:[PCCircleViewConst getGestureWithKey:gestureOneSaveKey]]; // 匹配两次手势
             if (equal){     // 一致，存储密码
                 [PCCircleViewConst saveGesture:gesture Key:gestureFinalSaveKey];
+                [PCCircleViewConst saveGesture:nil Key:gestureOneSaveKey];
             } else {        // 不一致，重绘回显
                 [self changeCircleInCircleSetWithState:CircleStateError];
             }

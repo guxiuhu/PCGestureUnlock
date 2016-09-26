@@ -88,7 +88,7 @@
 - (void)circleView:(PCCircleView *)view didCompleteSetSecondGesture:(NSString *)gesture result:(BOOL)equal {
     if (equal) {
         [_msgLabel showNormalMsg:gestureTextSetSuccess];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self dismissViewControllerAnimated:YES completion:NULL];
         });
     } else {
@@ -134,11 +134,12 @@
 - (void)forgetGestureBtnDidClick:(UIButton *)sender {
     //TODO:点击忘记密码后，自动退出账号/清除手势?
 //    [[self class] removeGesture];
-//    [[NSNotificationCenter defaultCenter] postNotificationName:kLogoutSuccess object:nil];
+//    [[NSNotificationCenter defaultCenter] postNotificationName:kLogoutSuccess object:nil];    //清除密码
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 - (void)closeBtnDidClick:(UIButton *)sender {
+    [PCCircleViewConst saveGesture:nil Key:gestureOneSaveKey];
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
