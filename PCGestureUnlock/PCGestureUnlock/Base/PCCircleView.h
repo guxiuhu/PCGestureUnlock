@@ -71,7 +71,6 @@ typedef NS_ENUM(NSInteger, CircleViewType) {
 // 代理
 @property (nonatomic, weak) id<PCCircleViewDelegate> delegate;
 
-
 /**
  *  初始化方法
  *

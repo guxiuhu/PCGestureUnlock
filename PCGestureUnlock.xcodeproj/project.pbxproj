@@ -12,7 +12,6 @@
 		3ABFF5BB1B288D75008190C6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3ABFF5BA1B288D75008190C6 /* Images.xcassets */; };
 		3ABFF5BE1B288D75008190C6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ABFF5BC1B288D75008190C6 /* LaunchScreen.xib */; };
 		3ABFF5CA1B288D75008190C6 /* PCGestureUnlockTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ABFF5C91B288D75008190C6 /* PCGestureUnlockTests.m */; };
-		3ABFF5E71B288F54008190C6 /* GestureVerifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ABFF5D51B288F54008190C6 /* GestureVerifyViewController.m */; };
 		3ABFF5E81B288F54008190C6 /* GestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ABFF5D71B288F54008190C6 /* GestureViewController.m */; };
 		3ABFF5E91B288F54008190C6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ABFF5D91B288F54008190C6 /* ViewController.m */; };
 		3ABFF5F41B288FBE008190C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ABFF5F21B288FBE008190C6 /* Main.storyboard */; };
@@ -20,7 +19,15 @@
 		3AE570F51B2DE18F008B3CBD /* ErrorDisplay.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3AE570F11B2DE18F008B3CBD /* ErrorDisplay.gif */; };
 		3AE570F61B2DE18F008B3CBD /* JumpConnect.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3AE570F21B2DE18F008B3CBD /* JumpConnect.gif */; };
 		3AE570F71B2DE18F008B3CBD /* settingGesture.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3AE570F31B2DE18F008B3CBD /* settingGesture.gif */; };
-		EBD0F5181CE5E1D9005B7F9A /* AYGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD0F5171CE5E1D9005B7F9A /* AYGestureViewController.m */; };
+		960E7ED11DB35EB3001F0E12 /* GestureVerifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 960E7ED01DB35EB3001F0E12 /* GestureVerifyViewController.m */; };
+		96CD72CE1DB3524900B2554B /* QiyeSingleData.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CD72CD1DB3524900B2554B /* QiyeSingleData.m */; };
+		96CD72DB1DB3545100B2554B /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CD72D11DB3545100B2554B /* FMDatabase.m */; };
+		96CD72DC1DB3545100B2554B /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CD72D31DB3545100B2554B /* FMDatabaseAdditions.m */; };
+		96CD72DD1DB3545100B2554B /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CD72D51DB3545100B2554B /* FMDatabasePool.m */; };
+		96CD72DE1DB3545100B2554B /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CD72D71DB3545100B2554B /* FMDatabaseQueue.m */; };
+		96CD72DF1DB3545100B2554B /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CD72DA1DB3545100B2554B /* FMResultSet.m */; };
+		96CD72E21DB3546100B2554B /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 96CD72E11DB3546100B2554B /* libsqlite3.0.tbd */; };
+		96CD72E51DB3548500B2554B /* QiyeDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CD72E41DB3548500B2554B /* QiyeDBHelper.m */; };
 		EBE627481CC8D7440037ADD3 /* PCCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE6273B1CC8D7440037ADD3 /* PCCircle.m */; };
 		EBE627491CC8D7440037ADD3 /* PCCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE6273D1CC8D7440037ADD3 /* PCCircleView.m */; };
 		EBE6274A1CC8D7440037ADD3 /* PCCircleViewConst.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE6273F1CC8D7440037ADD3 /* PCCircleViewConst.m */; };
@@ -50,8 +57,6 @@
 		3ABFF5C31B288D75008190C6 /* PCGestureUnlockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PCGestureUnlockTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ABFF5C81B288D75008190C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3ABFF5C91B288D75008190C6 /* PCGestureUnlockTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCGestureUnlockTests.m; sourceTree = "<group>"; };
-		3ABFF5D41B288F54008190C6 /* GestureVerifyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GestureVerifyViewController.h; sourceTree = "<group>"; };
-		3ABFF5D51B288F54008190C6 /* GestureVerifyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GestureVerifyViewController.m; sourceTree = "<group>"; };
 		3ABFF5D61B288F54008190C6 /* GestureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GestureViewController.h; sourceTree = "<group>"; };
 		3ABFF5D71B288F54008190C6 /* GestureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GestureViewController.m; sourceTree = "<group>"; };
 		3ABFF5D81B288F54008190C6 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -61,8 +66,24 @@
 		3AE570F11B2DE18F008B3CBD /* ErrorDisplay.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ErrorDisplay.gif; sourceTree = "<group>"; };
 		3AE570F21B2DE18F008B3CBD /* JumpConnect.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = JumpConnect.gif; sourceTree = "<group>"; };
 		3AE570F31B2DE18F008B3CBD /* settingGesture.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = settingGesture.gif; sourceTree = "<group>"; };
-		EBD0F5161CE5E1D9005B7F9A /* AYGestureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYGestureViewController.h; sourceTree = "<group>"; };
-		EBD0F5171CE5E1D9005B7F9A /* AYGestureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYGestureViewController.m; sourceTree = "<group>"; };
+		960E7ECF1DB35EB3001F0E12 /* GestureVerifyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GestureVerifyViewController.h; sourceTree = "<group>"; };
+		960E7ED01DB35EB3001F0E12 /* GestureVerifyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GestureVerifyViewController.m; sourceTree = "<group>"; };
+		96CD72CC1DB3524900B2554B /* QiyeSingleData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QiyeSingleData.h; sourceTree = "<group>"; };
+		96CD72CD1DB3524900B2554B /* QiyeSingleData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QiyeSingleData.m; sourceTree = "<group>"; };
+		96CD72D01DB3545100B2554B /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		96CD72D11DB3545100B2554B /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		96CD72D21DB3545100B2554B /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		96CD72D31DB3545100B2554B /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		96CD72D41DB3545100B2554B /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		96CD72D51DB3545100B2554B /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		96CD72D61DB3545100B2554B /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		96CD72D71DB3545100B2554B /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		96CD72D81DB3545100B2554B /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		96CD72D91DB3545100B2554B /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		96CD72DA1DB3545100B2554B /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		96CD72E11DB3546100B2554B /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		96CD72E31DB3548500B2554B /* QiyeDBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QiyeDBHelper.h; sourceTree = "<group>"; };
+		96CD72E41DB3548500B2554B /* QiyeDBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QiyeDBHelper.m; sourceTree = "<group>"; };
 		EBE6273A1CC8D7440037ADD3 /* PCCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCCircle.h; sourceTree = "<group>"; };
 		EBE6273B1CC8D7440037ADD3 /* PCCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCCircle.m; sourceTree = "<group>"; };
 		EBE6273C1CC8D7440037ADD3 /* PCCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCCircleView.h; sourceTree = "<group>"; };
@@ -82,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96CD72E21DB3546100B2554B /* libsqlite3.0.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +123,7 @@
 				3ABFF5AC1B288D75008190C6 /* PCGestureUnlock */,
 				3ABFF5C61B288D75008190C6 /* PCGestureUnlockTests */,
 				3ABFF5AB1B288D75008190C6 /* Products */,
+				96CD72E01DB3546100B2554B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -116,6 +139,7 @@
 		3ABFF5AC1B288D75008190C6 /* PCGestureUnlock */ = {
 			isa = PBXGroup;
 			children = (
+				96CD72CF1DB3545100B2554B /* fmdb */,
 				EBE627381CC8D7440037ADD3 /* PCGestureUnlock */,
 				3ABFF5D31B288F54008190C6 /* Controller */,
 				3ABFF5B11B288D75008190C6 /* AppDelegate.h */,
@@ -161,16 +185,40 @@
 		3ABFF5D31B288F54008190C6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				3ABFF5D41B288F54008190C6 /* GestureVerifyViewController.h */,
-				3ABFF5D51B288F54008190C6 /* GestureVerifyViewController.m */,
+				960E7ECF1DB35EB3001F0E12 /* GestureVerifyViewController.h */,
+				960E7ED01DB35EB3001F0E12 /* GestureVerifyViewController.m */,
 				3ABFF5D61B288F54008190C6 /* GestureViewController.h */,
 				3ABFF5D71B288F54008190C6 /* GestureViewController.m */,
 				3ABFF5D81B288F54008190C6 /* ViewController.h */,
 				3ABFF5D91B288F54008190C6 /* ViewController.m */,
-				EBD0F5161CE5E1D9005B7F9A /* AYGestureViewController.h */,
-				EBD0F5171CE5E1D9005B7F9A /* AYGestureViewController.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		96CD72CF1DB3545100B2554B /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				96CD72D01DB3545100B2554B /* FMDatabase.h */,
+				96CD72D11DB3545100B2554B /* FMDatabase.m */,
+				96CD72D21DB3545100B2554B /* FMDatabaseAdditions.h */,
+				96CD72D31DB3545100B2554B /* FMDatabaseAdditions.m */,
+				96CD72D41DB3545100B2554B /* FMDatabasePool.h */,
+				96CD72D51DB3545100B2554B /* FMDatabasePool.m */,
+				96CD72D61DB3545100B2554B /* FMDatabaseQueue.h */,
+				96CD72D71DB3545100B2554B /* FMDatabaseQueue.m */,
+				96CD72D81DB3545100B2554B /* FMDB.h */,
+				96CD72D91DB3545100B2554B /* FMResultSet.h */,
+				96CD72DA1DB3545100B2554B /* FMResultSet.m */,
+			);
+			path = fmdb;
+			sourceTree = "<group>";
+		};
+		96CD72E01DB3546100B2554B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				96CD72E11DB3546100B2554B /* libsqlite3.0.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		EBE627381CC8D7440037ADD3 /* PCGestureUnlock */ = {
@@ -192,6 +240,10 @@
 				EBE6273D1CC8D7440037ADD3 /* PCCircleView.m */,
 				EBE6273E1CC8D7440037ADD3 /* PCCircleViewConst.h */,
 				EBE6273F1CC8D7440037ADD3 /* PCCircleViewConst.m */,
+				96CD72CC1DB3524900B2554B /* QiyeSingleData.h */,
+				96CD72CD1DB3524900B2554B /* QiyeSingleData.m */,
+				96CD72E31DB3548500B2554B /* QiyeDBHelper.h */,
+				96CD72E41DB3548500B2554B /* QiyeDBHelper.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -260,11 +312,12 @@
 		3ABFF5A21B288D75008190C6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = coderMonkey;
 				TargetAttributes = {
 					3ABFF5A91B288D75008190C6 = {
 						CreatedOnToolsVersion = 6.2;
+						ProvisioningStyle = Manual;
 					};
 					3ABFF5C21B288D75008190C6 = {
 						CreatedOnToolsVersion = 6.2;
@@ -321,15 +374,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				3ABFF5E81B288F54008190C6 /* GestureViewController.m in Sources */,
-				3ABFF5E71B288F54008190C6 /* GestureVerifyViewController.m in Sources */,
+				96CD72DB1DB3545100B2554B /* FMDatabase.m in Sources */,
+				96CD72E51DB3548500B2554B /* QiyeDBHelper.m in Sources */,
 				3ABFF5B31B288D75008190C6 /* AppDelegate.m in Sources */,
+				96CD72CE1DB3524900B2554B /* QiyeSingleData.m in Sources */,
+				96CD72DC1DB3545100B2554B /* FMDatabaseAdditions.m in Sources */,
 				3ABFF5B01B288D75008190C6 /* main.m in Sources */,
-				EBD0F5181CE5E1D9005B7F9A /* AYGestureViewController.m in Sources */,
+				96CD72DD1DB3545100B2554B /* FMDatabasePool.m in Sources */,
 				EBE627491CC8D7440037ADD3 /* PCCircleView.m in Sources */,
+				96CD72DE1DB3545100B2554B /* FMDatabaseQueue.m in Sources */,
 				EBE6274C1CC8D7440037ADD3 /* PCCircleInfoView.m in Sources */,
 				EBE6274D1CC8D7440037ADD3 /* PCLockLabel.m in Sources */,
 				EBE6274A1CC8D7440037ADD3 /* PCCircleViewConst.m in Sources */,
+				96CD72DF1DB3545100B2554B /* FMResultSet.m in Sources */,
 				EBE6274B1CC8D7440037ADD3 /* CALayer+Anim.m in Sources */,
+				960E7ED11DB35EB3001F0E12 /* GestureVerifyViewController.m in Sources */,
 				EBE627481CC8D7440037ADD3 /* PCCircle.m in Sources */,
 				3ABFF5E91B288F54008190C6 /* ViewController.m in Sources */,
 			);
@@ -386,15 +445,19 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -427,8 +490,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -436,6 +501,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -453,8 +519,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = PCGestureUnlock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.coderMonkey.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -463,8 +532,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = PCGestureUnlock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.coderMonkey.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -483,6 +555,7 @@
 				);
 				INFOPLIST_FILE = PCGestureUnlockTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.coderMonkey.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PCGestureUnlock.app/PCGestureUnlock";
 			};
@@ -498,6 +571,7 @@
 				);
 				INFOPLIST_FILE = PCGestureUnlockTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.coderMonkey.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PCGestureUnlock.app/PCGestureUnlock";
 			};

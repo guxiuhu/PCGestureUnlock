@@ -3,7 +3,6 @@
 #import "GestureViewController.h"
 #import "GestureVerifyViewController.h"
 #import "PCCircleView.h"
-#import "AYGestureViewController.h"
 
 @interface ViewController ()<UIAlertViewDelegate>
 
@@ -31,30 +30,38 @@
 
 - (IBAction)BtnClick:(UIButton *)sender {
     
+    [PCCircleViewConst saveLockCodeKey:@"qiye"];
+    
     switch (sender.tag) {
         case 1:
         {
             GestureViewController *gestureVc = [[GestureViewController alloc] init];
             gestureVc.type = GestureViewControllerTypeSetting;
-            [self.navigationController pushViewController:gestureVc animated:YES];
+            [self presentViewController:[[UINavigationController alloc] initWithRootViewController:gestureVc] animated:YES completion:nil];
         }
             break;
         case 2:
         {
-            if ([PCCircleViewConst getGestureWithKey:gestureFinalSaveKey]) {
+            GestureViewController *gestureVc = [[GestureViewController alloc] init];
+            gestureVc.type = GestureViewControllerTypeVerify;
+            gestureVc.loginUseOtherAccountBlock = ^(){
+                
+            };
+            gestureVc.getPwdBlock = ^(NSString *pwd,id vc){
+                [vc dismissViewControllerAnimated:YES completion:nil];
+                
                 GestureViewController *gestureVc = [[GestureViewController alloc] init];
-                gestureVc.type = GestureViewControllerTypeVerify;
-                [self.navigationController pushViewController:gestureVc animated:YES];
-            } else {
-                UIAlertView *alerView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"暂未设置手势密码，是否前往设置" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"设置", nil];
-                [alerView show];
-            }
+                gestureVc.type = GestureViewControllerTypeSetting;
+                [self presentViewController:[[UINavigationController alloc] initWithRootViewController:gestureVc] animated:YES completion:nil];
+
+            };
+            [self presentViewController:[[UINavigationController alloc] initWithRootViewController:gestureVc] animated:YES completion:nil];
         }
             break;
         case 3:
         {
             GestureVerifyViewController *gestureVerifyVc = [[GestureVerifyViewController alloc] init];
-            [self.navigationController pushViewController:gestureVerifyVc animated:YES];
+            [self presentViewController:[[UINavigationController alloc] initWithRootViewController:gestureVerifyVc] animated:YES completion:nil];
         }
             break;
             
@@ -62,35 +69,26 @@
         {
             GestureVerifyViewController *gestureVerifyVc = [[GestureVerifyViewController alloc] init];
             gestureVerifyVc.isToSetNewGesture = YES;
-            [self.navigationController pushViewController:gestureVerifyVc animated:YES];
+            [self presentViewController:[[UINavigationController alloc] initWithRootViewController:gestureVerifyVc] animated:YES completion:nil];
         }
             break;
         case 5:
         {
-            AYGestureViewController *controller = [[AYGestureViewController alloc] init];
-            controller.type = [AYGestureViewController hasGesture] ? AYGestureTypeModify : AYGestureTypeSetting;
-            [self presentViewController:controller animated:YES completion:NULL];
+//            AYGestureViewController *controller = [[AYGestureViewController alloc] init];
+//            controller.type = [AYGestureViewController hasGesture] ? AYGestureTypeModify : AYGestureTypeSetting;
+//            [self presentViewController:controller animated:YES completion:NULL];
         }
             break;
             
         case 6:
         {
-            [AYGestureViewController removeGesture];
-            
-            [[[UIAlertView alloc] initWithTitle:@"手势密码已清除" message:nil delegate:nil cancelButtonTitle:@"关闭" otherButtonTitles:nil] show];
+//            [AYGestureViewController removeGesture];
+//            
+//            [[[UIAlertView alloc] initWithTitle:@"手势密码已清除" message:nil delegate:nil cancelButtonTitle:@"关闭" otherButtonTitles:nil] show];
         }
             break;
         default:
             break;
-    }
-}
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (buttonIndex == 1) {
-        GestureViewController *gestureVc = [[GestureViewController alloc] init];
-        gestureVc.type = GestureViewControllerTypeSetting;
-        [self.navigationController pushViewController:gestureVc animated:YES];
     }
 }
 

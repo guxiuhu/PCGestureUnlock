@@ -7,6 +7,8 @@
 #import "PCCircleView.h"
 #import "PCCircle.h"
 #import "PCCircleViewConst.h"
+#import "QiyeDBHelper.h"
+#import "QiyeSingleData.h"
 
 @interface PCCircleView()
 
@@ -243,7 +245,7 @@
  */
 - (void)gestureEndByTypeSettingWithGesture:(NSString *)gesture length:(NSUInteger)length {
     if (length < CircleSetCountLeast) {     // 连接少于最少个数
-        NSString *gestureOne = [PCCircleViewConst getGestureWithKey:gestureOneSaveKey];
+        NSString *gestureOne = [PCCircleViewConst getTmpGestureWithKey:gestureOneSaveKey];
         
         if (gestureOne.length > 0) {    // 看是否存在第一个密码
             if ([self.delegate respondsToSelector:@selector(circleView:didCompleteSetSecondGesture:result:)]) {
@@ -259,7 +261,7 @@
         [self changeCircleInCircleSetWithState:CircleStateError];
         
     } else {        // 连接多于最少个数
-        NSString *gestureOne = [PCCircleViewConst getGestureWithKey:gestureOneSaveKey];
+        NSString *gestureOne = [PCCircleViewConst getTmpGestureWithKey:gestureOneSaveKey];
         if (gestureOne.length < CircleSetCountLeast) { // 接收并存储第一个密码
             // 记录第一次密码
             [PCCircleViewConst saveGesture:gesture Key:gestureOneSaveKey];
@@ -269,9 +271,14 @@
                 [self.delegate circleView:self didCompleteSetFirstGesture:gesture result:YES];
             }
         } else { // 接受第二个密码并与第一个密码匹配，一致后存储起来
-            BOOL equal = [gesture isEqualToString:[PCCircleViewConst getGestureWithKey:gestureOneSaveKey]]; // 匹配两次手势
+            BOOL equal = [gesture isEqualToString:[PCCircleViewConst getTmpGestureWithKey:gestureOneSaveKey]]; // 匹配两次手势
             if (equal){     // 一致，存储密码
-                [PCCircleViewConst saveGesture:gesture Key:gestureFinalSaveKey];
+                
+                NSString *key = [[QiyeSingleData instance]getDataWithKey:@"gestureKeySaveKey"];
+                NSAssert(key, @"没有传进来保存的key");
+                QiyeDBHelper *db = [[QiyeDBHelper alloc]init];
+                [db insertWithKey:key andLockCode:gesture];
+                
                 [PCCircleViewConst saveGesture:nil Key:gestureOneSaveKey];
             } else {        // 不一致，重绘回显
                 [self changeCircleInCircleSetWithState:CircleStateError];
@@ -289,8 +296,13 @@
  *  解锁类型：验证 手势路径的处理
  */
 - (void)gestureEndByTypeVerifyWithGesture:(NSString *)gesture length:(NSUInteger)length {
-    NSString *password = [PCCircleViewConst getGestureWithKey:gestureFinalSaveKey];
     
+    NSString *key = [[QiyeSingleData instance]getDataWithKey:@"gestureKeySaveKey"];
+    NSAssert(key, @"没有传进来保存的key");
+    QiyeDBHelper *db = [[QiyeDBHelper alloc]init];
+
+    NSString *password = [db selectLockCodeWithKey:key];
+
     BOOL equal = [gesture isEqualToString:password];
     if (!equal) {
         [self changeCircleInCircleSetWithState:CircleStateError];

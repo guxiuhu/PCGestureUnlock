@@ -60,7 +60,8 @@
             [gestureVc setType:GestureViewControllerTypeSetting];
             [self.navigationController pushViewController:gestureVc animated:NO];
         } else {
-            [self.navigationController popToRootViewControllerAnimated:YES];
+            
+            [self dismissViewControllerAnimated:YES completion:nil];
         }
         
     } else {

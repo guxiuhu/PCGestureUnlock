@@ -144,11 +144,6 @@
 #define kdisplayTime 1.0f
 
 /**
- *  最终的手势密码存储key
- */
-#define gestureFinalSaveKey @"gestureFinalSaveKey"
-
-/**
  *  第一个手势密码存储key
  */
 #define gestureOneSaveKey @"gestureOneSaveKey"
@@ -227,6 +222,25 @@
  *
  *  @return 字符串对象
  */
++ (NSString *)getTmpGestureWithKey:(NSString *)key;
+
+
+/**
+ *  偏好设置：取字符串手势密码
+ *
+ *  @param key key
+ *
+ *  @return 字符串对象
+ */
 + (NSString *)getGestureWithKey:(NSString *)key;
+
+/**
+ 保存密码的key
+
+ @param key key
+
+ @return 保存结果
+ */
++ (void)saveLockCodeKey:(NSString*)key;
 
 @end

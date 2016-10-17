@@ -20,4 +20,14 @@ typedef NS_ENUM(NSInteger, buttonTag){
  */
 @property (nonatomic, assign) GestureViewControllerType type;
 
+@property (nonatomic, copy) void (^getPwdBlock)(NSString *pwd,id vc);
+@property (nonatomic, copy) void (^loginUseOtherAccountBlock)();
+
+
+/**
+ 头像
+ */
+@property (strong, nonatomic) UIImage *userImage;
+
+
 @end

@@ -26,17 +26,30 @@
  */
 @property (nonatomic, strong) PCCircleInfoView *infoView;
 
+
+/**
+ 头像
+ */
+@property (strong, nonatomic) UIImageView  *usrePhotoImageView;
+
 @end
 
 @implementation GestureViewController
+
+
+-(void)setUserImage:(UIImage *)userImage{
+    
+    self.userImage = userImage;
+    [self.usrePhotoImageView setImage:userImage];
+}
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
-    //    if (self.type == GestureViewControllerTypeVerify) {
-    //        [self.navigationController setNavigationBarHidden:YES animated:animated];
-    //    }
+        if (self.type == GestureViewControllerTypeVerify) {
+            [self.navigationController setNavigationBarHidden:YES animated:animated];
+        }
     
     if (_type == GestureViewControllerTypeSetting) {
         // 进来先清空存的第一个密码
@@ -138,15 +151,15 @@
     [self.lockView setType:CircleViewTypeVerify];
     
     // 头像
-    UIImageView  *imageView = [[UIImageView alloc] init];
-    imageView.frame = CGRectMake(0, 0, 65, 65);
-    imageView.center = CGPointMake(kScreenW/2, kScreenH/5);
-    [imageView setImage:[UIImage imageNamed:@"head"]];
-    [self.view addSubview:imageView];
+    self.usrePhotoImageView = [[UIImageView alloc] init];
+    self.usrePhotoImageView.frame = CGRectMake(0, 0, 65, 65);
+    self.usrePhotoImageView.center = CGPointMake(kScreenW/2, kScreenH/5);
+    [self.usrePhotoImageView setImage:[UIImage imageNamed:@"head"]];
+    [self.view addSubview:self.usrePhotoImageView];
     
     // 管理手势密码
     UIButton *leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self creatButton:leftBtn frame:CGRectMake(CircleViewEdgeMargin + 20, kScreenH - 60, kScreenW/2, 20) title:@"管理手势密码" alignment:UIControlContentHorizontalAlignmentLeft tag:buttonTagManager];
+    [self creatButton:leftBtn frame:CGRectMake(CircleViewEdgeMargin + 20, kScreenH - 60, kScreenW/2, 20) title:@"忘记手势密码" alignment:UIControlContentHorizontalAlignmentLeft tag:buttonTagManager];
     
     // 登录其他账户
     UIButton *rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -185,17 +198,43 @@
             
             // 4.清除之前存储的密码
             [PCCircleViewConst saveGesture:nil Key:gestureOneSaveKey];
-            [PCCircleViewConst saveGesture:nil Key:gestureFinalSaveKey];
         }
             break;
         case buttonTagManager:
         {
-            NSLog(@"点击了管理手势密码按钮");
+            // 初始化
+            UIAlertController *alertDialog = [UIAlertController alertControllerWithTitle:@"请输入登录密码" message:nil
+                                                                          preferredStyle:UIAlertControllerStyleAlert];
             
+            // 创建文本框
+            [alertDialog addTextFieldWithConfigurationHandler:^(UITextField *textField){
+                textField.placeholder = @"请输入登录密码";
+                textField.secureTextEntry = YES;
+            }];
+            
+            // 创建操作
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                // 读取文本框的值显示出来
+                UITextField *pwdField = alertDialog.textFields.firstObject;
+                if (self.getPwdBlock) {
+                    self.getPwdBlock(pwdField.text,self);
+                }
+            }];
+            
+            // 添加操作（顺序就是呈现的上下顺序）
+            [alertDialog addAction:okAction];  
+            
+            // 呈现警告视图  
+            [self presentViewController:alertDialog animated:YES completion:nil];
         }
             break;
         case buttonTagForget:
+        {
             NSLog(@"点击了登录其他账户按钮");
+            if (self.loginUseOtherAccountBlock) {
+                self.loginUseOtherAccountBlock();
+            }
+        }
             
             break;
         default:
@@ -225,7 +264,7 @@
         NSLog(@"两次手势匹配！");
         
         [self.msgLabel showNormalMsg:gestureTextSetSuccess];
-        [self.navigationController popToRootViewControllerAnimated:YES];
+        [self dismissViewControllerAnimated:YES completion:nil];
         
     } else {
         NSLog(@"两次手势不匹配！");
@@ -239,7 +278,7 @@
 {
     if (equal) {
         NSLog(@"登陆成功！");
-        [self.navigationController popToRootViewControllerAnimated:YES];
+        [self dismissViewControllerAnimated:YES completion:nil];
     } else {
         NSLog(@"密码错误！");
         [self.msgLabel showWarnMsgAndShake:gestureTextGestureVerifyError];
